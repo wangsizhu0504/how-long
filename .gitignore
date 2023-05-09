@@ -178,3 +178,5 @@ yarn.lock
 
 src/*.js
 src/*.d.ts
+api/**/*.js
+api/**/*.d.ts
