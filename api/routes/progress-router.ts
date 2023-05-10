@@ -1,6 +1,7 @@
 import type { Request, Response } from 'express'
 import express from 'express'
-import camelCase from 'lodash.camelCase'
+
+// import camelCase from 'lodash.camelCase'
 import { generate } from '../../src'
 
 const router = express.Router() as any
@@ -11,9 +12,9 @@ router.get('/', (req: Request, res: Response) => {
   if (!image) {
     const qs = req.query
     const options: Record<string, any> = {}
-    Object.keys(qs).forEach((key) => {
-      options[camelCase(key)] = qs[key]
-    })
+    // Object.keys(qs).forEach((key) => {
+    //   options[camelCase(key)] = qs[key]
+    // })
     image = generate(options)
     cache[req.path] = image
   }

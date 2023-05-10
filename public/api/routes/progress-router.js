@@ -4,7 +4,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
-const lodash_camelCase_1 = __importDefault(require("lodash.camelCase"));
+// import camelCase from 'lodash.camelCase'
 const src_1 = require("../../src");
 const router = express_1.default.Router();
 const cache = {};
@@ -13,9 +13,9 @@ router.get('/', (req, res) => {
     if (!image) {
         const qs = req.query;
         const options = {};
-        Object.keys(qs).forEach((key) => {
-            options[(0, lodash_camelCase_1.default)(key)] = qs[key];
-        });
+        // Object.keys(qs).forEach((key) => {
+        //   options[camelCase(key)] = qs[key]
+        // })
         image = (0, src_1.generate)(options);
         cache[req.path] = image;
     }
