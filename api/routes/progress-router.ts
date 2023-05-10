@@ -10,12 +10,7 @@ const cache: Record<string, any> = {}
 router.get('/', (req: Request, res: Response) => {
   let image = cache[req.path]
   if (!image) {
-    const qs = req.query
-    const options: Record<string, any> = {}
-    // Object.keys(qs).forEach((key) => {
-    //   options[camelCase(key)] = qs[key]
-    // })
-    image = generate(options)
+    image = generate(req.query)
     cache[req.path] = image
   }
 
