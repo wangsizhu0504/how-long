@@ -3,7 +3,7 @@ import routes from './routes/progress-router'
 
 const app = express()
 // Use routing on the /api prefix
-app.use('/', routes)
+app.use('/api', routes)
 
 // Start listening on defined port
 app.listen(3101, () => {

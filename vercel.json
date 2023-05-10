@@ -16,11 +16,5 @@
       "destination": "public/api/index.js"
     }
   ],
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "/"
-    }
-  ],
   "cleanUrls": true
 }
